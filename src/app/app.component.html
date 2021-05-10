@@ -4,9 +4,7 @@
     <div class="col-xs-12">
       <h2>Heures des derniers biberons</h2>
       <ul class="list-group">
-        <app-heures-biberons [name]="name1" [dateHeureBib]="dateHeureBibTs" [quantite]="quantiteTs"></app-heures-biberons>
-        <app-heures-biberons [name]="name2" [dateHeureBib]="dateHeureBibTs" [quantite]="quantiteTs"></app-heures-biberons>
-        <app-heures-biberons [name]="name1" [dateHeureBib]="dateHeureBibTs" [quantite]="quantiteTs"></app-heures-biberons>
+        <app-heures-biberons *ngFor="let bib of bibInfos" [name]="bib.name" [dateHeureBib]="bib.dateHeureBibTs" [quantite]="bib.quantiteTs"></app-heures-biberons>
       </ul>
     </div>
   </div>
