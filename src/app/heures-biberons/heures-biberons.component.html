@@ -1,4 +1,9 @@
-<li class="list-group-item">
-    <h4>{{name}}</h4>
+<li [ngClass]="{'list-group-item':true, 'list-group-item-success': loveIt === 1, 'list-group-item-danger': loveIt === 0}">
+    <div class="col-sm-12">
+        <h4 [ngStyle]="{color: loveItFunction()}" [ngClass]="{'col-sm-6':true}">{{name}}</h4>
+        <p [ngClass]="{'col-sm-6':true}">{{created_at | date: 'd MMMM y HH:mm' }}</p>
+    </div>
     <p>{{dateHeureBib}} - {{quantite}}</p>
+    <button class="btn btn-success" (click)="onLoveIt()">Love it</button>
+    <button class="btn btn-danger" (click)="onDislike()">Don't Love it</button>
 </li>

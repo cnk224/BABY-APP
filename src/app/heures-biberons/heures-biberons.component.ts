@@ -10,10 +10,27 @@ export class HeuresBiberonsComponent implements OnInit {
   @Input() name:string;
   @Input() dateHeureBib:string;
   @Input() quantite:string;
+  @Input() loveIt:number;
+  @Input() created_at:Date;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  loveItFunction(){
+    if(this.loveIt === 1){
+      return 'green';
+    }else if(this.loveIt === 0){
+      return 'red';
+    }
+  }
+
+  onLoveIt(){
+    this.loveIt = 1;
+  }
+
+  onDislike(){
+    this.loveIt = 0;
+  }
 }
